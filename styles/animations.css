@@ -12,3 +12,91 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+.like-icon .core {
+  fill: transparent;
+  transition: fill 0.3s linear 0.03s;
+}
+
+.like-icon .main-body {
+  fill: transparent;
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .core {
+  fill: var(--accent-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--accent-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon:active .core {
+  fill: var(--filling-heart_color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body {
+  fill: var(--filling-heart_color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+
+.like-icon.is-liked .core {
+  fill: var(--filling-heart_color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+    fill: var(--filling-heart_color);
+    transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .contour {
+    fill: var(--filling-heart_color);
+    transition: fill 0.3s linear 0.06s;
+}
+
+@keyframes scale-heart {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+.like-icon.is-liked {
+  animation: scale-heart 0.3s ease-in 0.1s 1 alternate;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+@keyframes sparks-opacity {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks-opacity 0.3s ease-in 0.3s 1 alternate;
+}
+
+/*
+
+@keyframes move_arrow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(4px);
+  }
+}
+*/

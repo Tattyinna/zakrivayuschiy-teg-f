@@ -6,7 +6,6 @@
 ✦ like-icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
@@ -17,4 +16,402 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font);
+  font-variation-settings: "wght" 400..785;
+  background-color: var(--background-color);
+  color: var(--accent-color);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: var(--background-image);
+}
+
+.page_width {
+  max-width: var(--page_width);
+}
+
+.header {
+  border: var(--border);
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 100px auto;
+}
+
+.logo {
+  font-family: var(--accent-font);
+  font-size: clamp(3.0625rem, 2.4847rem + 2.4653vw, 4.0625rem);
+  padding-top: clamp(120px, 20vw, 136px);
+  padding-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.title {
+  font-family: var(--accent-font);
+  font-size: clamp(0.875rem, 0.55rem + 1.3867vw, 1.4375rem);
+  padding-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.header__theme-menu {
+  padding-bottom: 19px;
+}
+
+.theme-menu__button {
+  border: none;
+  background-color: var(--background-color);
+  font-family: var(--accent-font);
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  position: relative;
+  transition: opacity 0.3s ease;
+}
+
+.theme-menu__button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.theme-menu__button:disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.theme-menu__button:disabled::before {
+  content: "▶";
+  position: absolute;
+  left: 10px;
+  animation: move_arrow 0.5s ease-in-out infinite alternate; 
+}
+
+.theme-menu__button:focus {
+  opacity: 0.6;
+  outline: none;
+}
+
+.theme-menu__button::after {
+  content: '';
+  position: absolute;
+  left: 28px;
+  bottom: 7px;
+  height: 2px;
+  background-color: var(--accent-color);
+  transform-origin: left;
+  width: 0;  
+  transform: scaleX(0);
+}
+
+.theme-menu__button:focus-visible::after{
+  width: 70%;
+  transform: scaleX(1);
+  transition: transform 0.3s ease;
+}
+
+ .card {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+  font-family: var(--main-font);
+  color: var(--accent-color);
+  border: var(--border);
+}
+
+.card:not(:first-child) {
+  margin-top: 52px;
+}
+
+.card_title {
+  font-weight: var(--font-weight_title);
+  line-height: 22px;
+  font-size: 18px;
+  border-bottom: var(--border);
+  padding: 3px 10px;
+}
+
+.card_paragraph {
+font-weight: var(--font-weight_paragraph);
+line-height: 21px;
+font-size: 18px;
+padding: 0px 25px;
+}
+
+.card_paragraph_short-padding {
+  padding-top: 27px;
+}
+
+.card_paragraph_long-padding{
+  padding-top: 27px;
+}
+
+.img_section {
+  position: relative
+}
+
+.lable {
+  position: absolute;
+  top: 25px;
+  right: 13px;
+  color: var(--accent-color);
+  font-family: var(--accent-font);
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+}
+
+@supports ((text-stroke: 1px var(--border-color)) or (-webkit-text-stroke: 1px var(--border-color))) {
+  .lable {
+    -webkit-text-stroke: 1px var(--border-color);
+    text-stroke: 1px var(--border-color);
+    text-shadow: none;
+  }
+}
+
+@supports not ((text-stroke: 1px var(--border-color)) or (-webkit-text-stroke: 1px var(--border-color))) {
+  .lable {
+    text-shadow: 
+      1px 1px 0 var(--border-color),
+      -1px -1px 0 var(--border-color),
+      -1px 1px 0 var(--border-color),
+      1px -1px 0 var(--border-color),
+      1px 0 0 var(--border-color),
+      -1px 0 0 var(--border-color),
+      0 1px 0 var(--border-color),
+      0 -1px 0 var(--border-color);
+  }
+}
+
+.img-item {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-bottom: var(--border);
+}
+
+.button_container {
+  display: flex;
+  align-items: center;
+  margin: 25px 25px 25px auto;
+}
+
+.button__text {
+  font-size: 14px;
+  position: relative;
+  color: var(--button_text-color);
+  mix-blend-mode: difference;
+}
+
+
+.card__icon-button {
+  background-color: transparent;
+  margin-right: 3px;
+  padding: 0px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--accent-color);
+  transition: opacity 0.3s ease;
+}
+
+.card__like-button {
+  border: var(--border);
+  width: 130px;
+  height: 38px;
+  font-family: var(--accent-font);
+  background-color: transparent;
+  transition: opacity 0.3s ease;
+  position: relative;
+}
+
+.card__like-button:hover {
+  cursor: pointer;
+}
+
+.card__like-button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.card__like-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card__like-button:hover::before {
+  transform: scaleX(1);
+}
+
+.footer_button  {
+  padding-top: 15px;
+  border: var(--border);
+  max-width: 335px;
+  font-family: var(--accent-font);
+  background-color: var(--background-color);
+  line-height: 90%;
+  display: flex;
+  align-items: center;
+  margin: 52px auto 105px;
+  position: relative;
+  padding: 13px 16px;
+  gap: 11px;
+}
+
+.footer_button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.footer_button:hover {
+  cursor: pointer;
+}
+
+.footer_button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+.footer_button:hover::before {
+  transform: scaleX(1);
+}
+
+.dialog {
+  background-color: var(--background-color);
+  display: grid;
+  position: fixed;
+  inset: 0;
+  width: clamp(341px, 85%, 357px);
+  border: 2px solid var(--accent-color);
+  padding: 30px;
+  box-sizing: border-box;
+  place-content: center;
+  transition: opacity 0.3s ease-in-out;
+}
+
+dialog:not([open]) {
+  pointer-events: none;
+  opacity: 0;
+} 
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.8);
+} 
+
+.dialog__text-area {
+  display: grid;
+  grid-template-columns: min-content minmax(198px, 234px);
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.dialog__text {
+  font-family: var(--accent-font);
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 150%;
+  color: var(--accent-color);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.dialog__button {
+  font-family: var(--accent-font);
+  width: clamp(257px, 293px, 100%); 
+  height: 38px;
+  border: 2px solid var(--accent-color);
+  text-transform: uppercase;
+  background-color: var(--background-color);
+  margin: auto;
+
+}
+
+.footer__floppy {
+  color: var(--button_text-color);
+  mix-blend-mode: difference;
+  height: 21px;
+  width: 21px;
+}
+
+.dialog__floppy {
+  color: var(--accent-color);
+  height: 39px;
+  width: 39px;
+}
+
+@media (width <= 375px) {
+  .footer_button {
+    flex-direction: column;
+    max-width: 306px;
+  }
+
+  .footer__floppy {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.dreams {
+  filter: saturate(200%); 
+}
+
+.stupor {
+  filter: sepia(100%); 
+}
+
+.seems-ok {
+  filter: brightness(95%);
+}
+
+.inspired {
+  filter: drop-shadow(10px 10px 5px #000);
+}
+
+.spanch-bob {
+  filter: contrast(200%);
+}
+
+.crying {
+  filter: hue-rotate(90deg); 
+}
+
+.depression {
+  filter: opacity(70%);
+}
+
+.tired {
+  filter: blur(1px) contrast(5%);
 }
