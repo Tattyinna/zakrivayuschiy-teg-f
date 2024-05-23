@@ -308,6 +308,12 @@
   transform: scaleX(1);
 }
 
+dialog:not([open]) {
+  pointer-events: none;
+  opacity: 0;
+  display: none;
+}
+
 .dialog {
   background-color: var(--background-color);
   display: grid;
@@ -319,11 +325,6 @@
   box-sizing: border-box;
   place-content: center;
   transition: opacity 0.3s ease-in-out;
-}
-
-dialog:not([open]) {
-  pointer-events: none;
-  opacity: 0;
 }
 
 dialog::backdrop {
