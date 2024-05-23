@@ -76,7 +76,7 @@
           </p>
 
           <div class="button_container">
-            <button class="card__icon-button" aria-labelledby="like-button">
+            <button class="card__icon-button">
               <svg
                 class="like-icon"
                 width="39"
@@ -139,7 +139,7 @@
           </p>
 
           <div class="button_container">
-            <button class="card__icon-button" aria-labelledby="like-button">
+            <button class="card__icon-button">
               <svg
                 class="like-icon"
                 width="39"
@@ -200,7 +200,7 @@
           </p>
 
           <div class="button_container">
-            <button class="card__icon-button" aria-labelledby="like-button">
+            <button class="card__icon-button">
               <svg
                 class="like-icon"
                 width="39"
@@ -263,7 +263,7 @@
           </p>
 
           <div class="button_container">
-            <button class="card__icon-button" aria-labelledby="like-button">
+            <button class="card__icon-button">
               <svg
                 class="like-icon"
                 width="39"
@@ -327,7 +327,7 @@
           </p>
 
           <div class="button_container">
-            <button class="card__icon-button" aria-labelledby="like-button">
+            <button class="card__icon-button">
               <svg
                 class="like-icon"
                 width="39"
@@ -388,7 +388,7 @@
           </p>
 
           <div class="button_container">
-            <button class="card__icon-button" aria-labelledby="like-button">
+            <button class="card__icon-button">
               <svg
                 class="like-icon"
                 width="39"
@@ -451,7 +451,7 @@
           </p>
 
           <div class="button_container">
-            <button class="card__icon-button" aria-labelledby="like-button">
+            <button class="card__icon-button">
               <svg
                 class="like-icon"
                 width="39"
@@ -515,7 +515,7 @@
           </p>
 
           <div class="button_container">
-            <button class="card__icon-button" aria-labelledby="like-button">
+            <button class="card__icon-button">
               <svg
                 class="like-icon"
                 width="39"
@@ -561,7 +561,7 @@
       <button
         class="footer_button"
         type="button"
-        aria-controls="dialog_modal_window"
+        aria-controls="modal_window"
         onclick="window['modal_window'].showModal()"
       >
         <svg class="floppy footer__floppy">
@@ -572,19 +572,21 @@
     </footer>
 
     <dialog class="dialog" aria-label="сохранение" id="modal_window">
-      <div class="dialog__text-area">
-        <svg class="floppy dialog__floppy">
-          <use href="./svg/floppy.svg#floppy-disk"></use>
-        </svg>
-        <p class="dialog__text">Вставьте дискету, чтобы продолжить</p>
-      </div>
-      <button
-        class="button dialog__button"
-        type="button"
-        onclick="window['modal_window'].close()"
-      >
-        <span class="dialog__text">ok</span>
-      </button>
+      <form method="dialog">
+        <div class="dialog__text-area">
+          <svg class="floppy dialog__floppy">
+            <use href="./svg/floppy.svg#floppy-disk"></use>
+          </svg>
+          <p class="dialog__text">Вставьте дискету, чтобы продолжить</p>
+        </div>
+        <button
+          class="button dialog__button"
+          type="button"
+          onclick="window['modal_window'].close()"
+        >
+          <span class="dialog__text">ok</span>
+        </button>
+      </form>
     </dialog>
 
     <script src="./scripts/like.js"></script>
