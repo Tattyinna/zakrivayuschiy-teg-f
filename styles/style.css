@@ -358,6 +358,9 @@ dialog::backdrop {
   margin: auto;
 }
 
+.dialog__button:hover {
+  cursor: pointer;
+}
 .footer__floppy {
   color: var(--button_text-color);
   mix-blend-mode: difference;
