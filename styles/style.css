@@ -17,7 +17,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font);
-  font-variation-settings: "wght" 400.785;
+  font-variation-settings: "wght" 400..785;
   background-color: var(--background-color);
   color: var(--accent-color);
   background-position: center;
@@ -198,6 +198,38 @@
   border-bottom: var(--border);
 }
 
+.dreams {
+  filter: saturate(200%);
+}
+
+.stupor {
+  filter: sepia(100%);
+}
+
+.seems-ok {
+  filter: brightness(95%);
+}
+
+.inspired {
+  filter: drop-shadow(10px 10px 5px #000);
+}
+
+.spanch-bob {
+  filter: contrast(200%);
+}
+
+.crying {
+  filter: hue-rotate(90deg);
+}
+
+.depression {
+  filter: opacity(70%);
+}
+
+.tired {
+  filter: blur(1px) contrast(8%);
+}
+
 .button_container {
   display: flex;
   align-items: center;
@@ -308,6 +340,13 @@
   transform: scaleX(1);
 }
 
+.footer__floppy {
+  color: var(--button_text-color);
+  mix-blend-mode: difference;
+  height: 21px;
+  width: 21px;
+}
+
 dialog:not([open]) {
   pointer-events: none;
   opacity: 0;
@@ -359,20 +398,14 @@ dialog::backdrop {
   margin: auto;
 }
 
-.dialog__button:hover {
-  cursor: pointer;
-}
-.footer__floppy {
-  color: var(--button_text-color);
-  mix-blend-mode: difference;
-  height: 21px;
-  width: 21px;
-}
-
 .dialog__floppy {
   color: var(--accent-color);
   height: 39px;
   width: 39px;
+}
+
+.dialog__button:hover {
+  cursor: pointer;
 }
 
 @media (width <= 375px) {
@@ -385,36 +418,4 @@ dialog::backdrop {
     width: 28px;
     height: 28px;
   }
-}
-
-.dreams {
-  filter: saturate(200%);
-}
-
-.stupor {
-  filter: sepia(100%);
-}
-
-.seems-ok {
-  filter: brightness(95%);
-}
-
-.inspired {
-  filter: drop-shadow(10px 10px 5px #000);
-}
-
-.spanch-bob {
-  filter: contrast(200%);
-}
-
-.crying {
-  filter: hue-rotate(90deg);
-}
-
-.depression {
-  filter: opacity(70%);
-}
-
-.tired {
-  filter: blur(1px) contrast(5%);
 }
