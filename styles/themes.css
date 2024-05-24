@@ -25,6 +25,7 @@
       transparent 4px
     ),
     linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
+  --button_text-color: #fff;
   --border-color: #fff;
   --contour-color: #000;
   --filling-heart_color: #ff0000;
