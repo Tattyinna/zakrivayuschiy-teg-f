@@ -255,10 +255,10 @@
 .card__icon-button:focus-visible {
   outline: 2px solid var(--accent-color);
   transition: opacity 0.3s ease;
-  outline-offset: -1.5px; 
+  outline-offset: -1.5px;
 }
 
-.card__like-button {  
+.card__like-button {
   border: var(--border);
   width: 130px;
   height: 38px;
@@ -406,10 +406,10 @@ dialog::backdrop {
 }
 
 .dialog__button:focus {
-outline: none;
+  outline: none;
 }
 
-.dialog__button:focus-visible {       
+.dialog__button:focus-visible {
   box-shadow: 2px 2px 0 var(--accent-color);
 }
 
